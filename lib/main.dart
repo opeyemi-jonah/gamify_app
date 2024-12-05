@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Gamify',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         
       ),
       home: const HomePage(),

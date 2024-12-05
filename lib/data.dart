@@ -117,7 +117,7 @@ List<Game> featuredGames = [
   ),
   Game(
     "Super Mario 3D World",
-    GameImage("https://wallpapercave.com/wp/wp4520671.jpg", ""),
+    GameImage("https://wallpapercave.com/wp/wp4520677.jpg", ""),
     "","Nintendo Studios"
   )
 ];
