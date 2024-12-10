@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gamify_app/data.dart';
+import 'package:gamify_app/widget/scrollable_games_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,8 +41,8 @@ class _HomePageState extends State<HomePage> {
         height: _deviceHeight * 0.50,
         width: _deviceWidth,
         child: PageView(
-          onPageChanged: (_index) => setState(() {
-            _selectedGame = _index;
+          onPageChanged: (index) => setState(() {
+            _selectedGame = index;
           }),
           scrollDirection: Axis.horizontal,
           children: featuredGames
@@ -87,8 +88,14 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
-          SizedBox(height: _deviceHeight * 0.13,),
+          SizedBox(
+            height: _deviceHeight * 0.13,
+          ),
           _featuredGamesInfoWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01),
+            child: ScrollableGamesWidget(_deviceHeight * 0.24, _deviceWidth, true, games),
+          )
         ],
       ),
     );
@@ -141,25 +148,26 @@ class _HomePageState extends State<HomePage> {
             Text(
               featuredGames[_selectedGame].title,
               maxLines: 2,
-              style: 
-                TextStyle(color: Colors.purple, fontSize: _deviceHeight * 0.040),
-
+              style: TextStyle(
+                  color: Colors.purple, fontSize: _deviceHeight * 0.040),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
-              children: featuredGames.map((_game) {
-                bool isActive = _game.title == featuredGames[_selectedGame].title;
-                double _circleRadius = _deviceHeight * 0.004;
+              children: featuredGames.map((game) {
+                bool isActive =
+                    game.title == featuredGames[_selectedGame].title;
+                double circleRadius = _deviceHeight * 0.004;
                 return Container(
                   margin: EdgeInsets.only(right: _deviceWidth * 0.015),
-                  height: _circleRadius * 2,
-                  width: _circleRadius * 2,
+                  height: circleRadius * 2,
+                  width: circleRadius * 2,
                   decoration: BoxDecoration(
-                    color: isActive ? Colors.green : Colors.grey, borderRadius: BorderRadius.circular(100),
+                    color: isActive ? Colors.green : Colors.grey,
+                    borderRadius: BorderRadius.circular(100),
                   ),
-              );
+                );
               }).toList(),
             ),
           ],
