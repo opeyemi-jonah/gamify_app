@@ -61,14 +61,14 @@ List<Game> games2 = [
   ),
   Game(
     "The Last of Us Part II",
-    GameImage("https://mvpo.us/img/P6253.jpg", ""),
+    GameImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt0vzE_REyjfQR7h6VOp-20CX1DRYkP192Kg&s", ""),
     "",
     "Naughty Dog",
   ),
   Game(
     "Sekiro: Shadows Die Twice",
     GameImage(
-        "https://onlysp.escapistmagazine.com/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-logo-art.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSES4OC6kOkN43JgfAxGAF8uHCcXc6iEFBNQ&s",
         ""),
     "",
     "From Software",
@@ -76,7 +76,7 @@ List<Game> games2 = [
   Game(
     "Just Cause 4",
     GameImage(
-        "https://s3.gaming-cdn.com/images/products/2666/orig/just-cause-4-cover.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnoB7zp7u-FxKeccAZRUNf3FfMKCj3oa7_8w&s",
         ""),
     "",
     "Avalanche Studios",

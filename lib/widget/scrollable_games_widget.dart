@@ -7,7 +7,9 @@ class ScrollableGamesWidget extends StatelessWidget {
   final bool showTitle;
   final List<Game> gamesData;
 
-  const ScrollableGamesWidget(this.height, this.width, this.showTitle, this.gamesData, {super.key});
+  const ScrollableGamesWidget(
+      this.height, this.width, this.showTitle, this.gamesData,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,9 @@ class ScrollableGamesWidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           children: gamesData
               .map((game_) => Container(
-                height: height,
-                width: width * 0.30,
-                padding: EdgeInsets.only(right: width * 0.03),
+                    height: height,
+                    width: width * 0.30,
+                    padding: EdgeInsets.only(right: width * 0.03),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.max,
@@ -38,7 +40,14 @@ class ScrollableGamesWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(game_.title, style: TextStyle(color: Colors.white, fontSize: height * 0.06),)
+                        showTitle
+                            ? Text(
+                                game_.title,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: height * 0.06),
+                              )
+                            : Container(),
                       ],
                     ),
                   ))
